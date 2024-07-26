@@ -1,0 +1,40 @@
+<launch>
+  <!-- Load robot model type -->
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="Model type [burger, waffle, waffle_pi]"/>
+  
+  <!-- Set initial robot position -->
+  <arg name="x_pos" default="0.0" doc="Initial X position for the robot"/>
+  <arg name="y_pos" default="0.0" doc="Initial Y position for the robot"/>
+  <arg name="z_pos" default="0.0" doc="Initial Z position for the robot"/>
+
+  <!-- Select world environment -->
+  <arg name="world_env" default="4" doc="World environment: 1 - one obstacle, 2 - five obstacles, 3 - ten obstacles, 4 - twenty obstacles"/>
+
+  <!-- Load the selected world environment roslaunch type2_D_ZCBFs turtlebot3_gazebo.launch world_env:=1/2/3/4-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(eval arg('world_env') == 1 and '$(find type2_D_ZCBFs)/static_obstacles_avoidence/worlds/one_obs.world' or
+                                   arg('world_env') == 2 and '$(find type2_D_ZCBFs)/static_obstacles_avoidence/worlds/five_obs.world' or
+                                   arg('world_env') == 3 and '$(find type2_D_ZCBFs)/static_obstacles_avoidence/worlds/ten_obs.world' or
+                                   '$(find type2_D_ZCBFs)/static_obstacles_avoidence/worlds/twenty_obs.world')"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Load robot model -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+
+  <!-- Load robot description -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <!-- Launch rviz visualization -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_gazebo)/rviz/turtlebot3_gazebo_model.rviz"/>
+
+  <!-- Spawn robot model in Gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"
+        args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+</launch>

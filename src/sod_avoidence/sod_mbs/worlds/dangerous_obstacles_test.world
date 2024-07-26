@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+   <world name="default">
+      <!-- A ground plane -->
+      <include>
+         <uri>model://ground_plane</uri>
+         <pose>0 0 0 0 0 0</pose>
+      </include>
+      <!-- A global light source -->
+      <include>
+         <uri>model://sun</uri>
+      </include>
+      <!-- Physics settings for smoother simulation -->
+      <!-- <physics type='ode'>
+        <max_step_size>0.001</max_step_size>
+        <real_time_update_rate>100</real_time_update_rate>
+      </physics> -->
+      <!-- An actor -->
+      <actor name="actor"> 
+       <skin>
+          <filename>walk.dae</filename>
+          <scale>0.8</scale>
+        </skin>
+        <script>
+          <loop>true</loop>
+          <delay_start>0</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+            <waypoint>
+              <time>0.0</time>
+              <pose>8.5 3.5 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>10.0</time>
+              <pose>8.5 0 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>11.0</time>
+              <pose>8.5 0 0 0 0 3.14</pose>
+            </waypoint>
+            <!-- 添加返回的路径点 -->
+            <waypoint>
+              <time>26.0</time>
+              <pose>4.1 0 0 0 0 3.14</pose>
+            </waypoint> 
+            <waypoint>
+              <time>27.0</time>
+              <pose>4.1 0 0 0 0 1.57</pose>
+            </waypoint> 
+            <waypoint>
+              <time>40.0</time>
+              <pose>4.1 5 0 0 0 1.57</pose>
+             </waypoint>  
+          </trajectory>
+        </script> 
+      </actor> 
+      <!-- An actor -->
+      <actor name="oneanimated_box">
+        <link name="link">
+          <visual name="visual">
+            <geometry>
+              <cylinder>
+                <radius>0.25</radius>
+                <length>0.5</length>
+              </cylinder>
+            </geometry>
+          </visual>
+        </link>
+        <script>
+          <loop>true</loop>
+          <delay_start>0</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="1" type="line">
+             <waypoint>
+              <time>0.0</time>
+              <pose>8.5 3.5 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>2.5</time>
+              <pose>8.5 2.625 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>5.0</time>
+              <pose>8.5 1.75 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>7.5</time>
+              <pose>8.5 0.875 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>10.0</time>
+              <pose>8.5 0 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>11.0</time>
+              <pose>8.5 0 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>18.5</time>
+              <pose>6.5 0 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>26.0</time>
+              <pose>4.5 0 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>27.0</time>
+              <pose>3.8 0 0 0 0 1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>31.0</time>
+              <pose>3.8 1.25 0 0 0 1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>35.0</time>
+              <pose>3.8 5 0 0 0 1.57</pose>
+            </waypoint>
+          </trajectory>
+        </script> 
+      </actor> 
+   </world>
+</sdf>

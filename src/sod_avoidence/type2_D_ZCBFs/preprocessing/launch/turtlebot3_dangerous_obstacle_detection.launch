@@ -1,0 +1,17 @@
+<launch>
+
+  <node name="analyse_dob_use_depth" pkg="sod_mbs" type="analyse_dob_use_depth" output="screen">
+  </node>
+
+  <!--  obstacle_pcl_handle node -->
+  <node name="obs_pcl_filter" pkg="pointcloud_handle" type="obs_pcl_filter" output="screen">
+  </node>
+
+  <!-- obstacle_circles_generator node -->
+  <node name="obs_pcl_circle" pkg="pointcloud_handle" type="obs_pcl_circle" output="screen">
+  </node>
+
+  <!-- obstacle_processor Python node -->
+  <node name="obstacle_processor" pkg="type2_D_ZCBFs" type="obs_data_process.py" output="screen">
+  </node>
+</launch>

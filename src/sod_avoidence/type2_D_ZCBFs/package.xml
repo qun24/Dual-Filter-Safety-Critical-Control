@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>type2_D_ZCBFs</name>
+  <version>0.0.0</version>
+  <description>The type2_D_ZCBFs package</description>
+
+  <maintainer email="qun@todo.todo">qun</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>realsense2_camera</build_depend>
+  <build_depend>realsense2_description</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>gazebo_ros</build_export_depend>
+  <build_export_depend>realsense2_camera</build_export_depend>
+  <build_export_depend>realsense2_description</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>realsense2_description</exec_depend>
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>

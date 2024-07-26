@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+   <world name="default">
+      <!-- A ground plane -->
+      <include>
+         <uri>model://ground_plane</uri>
+         <pose>0 0 0 0 0 0</pose>
+      </include>
+      <!-- A global light source -->
+      <include>
+         <uri>model://sun</uri>
+      </include>
+      <!-- Physics settings for smoother simulation -->
+      <!-- <physics type='ode'>
+        <max_step_size>0.001</max_step_size>
+        <real_time_update_rate>100</real_time_update_rate>
+      </physics> -->
+      <!-- An actor -->
+     <actor name="pedestrian1"> 
+       <skin>
+          <filename>walk.dae</filename>
+          <scale>0.8</scale>
+        </skin>
+        <script>
+          <loop>true</loop>
+          <delay_start>0</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+            <waypoint>
+              <time>0.0</time>
+              <pose>6.5 0.5 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>10.0</time>
+              <pose>3.5 0.5 0 0 0 3.14</pose>
+            </waypoint>
+            <!-- <waypoint>
+              <time>0.0</time>
+              <pose>8.5 3.5 0 0 0 -1.57</pose>
+            </waypoint> -->
+            <!-- <waypoint>
+              <time>10.0</time>
+              <pose>8.5 0 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>11.0</time>
+              <pose>8.5 0 0 0 0 3.14</pose>
+            </waypoint> -->
+            <!-- 添加返回的路径点 -->
+            <!-- <waypoint>
+              <time>26.0</time>
+              <pose>4.1 0 0 0 0 3.14</pose>
+            </waypoint> 
+            <waypoint>
+              <time>27.0</time>
+              <pose>4.1 0 0 0 0 1.57</pose>
+            </waypoint> 
+            <waypoint>
+              <time>40.0</time>
+              <pose>4.1 5 0 0 0 1.57</pose>
+            </waypoint>   -->
+          </trajectory>
+        </script> 
+      </actor> 
+      <!-- An actor -->
+      <actor name="pedestrain2"> 
+       <skin>
+          <filename>walk.dae</filename>
+          <scale>0.8</scale>
+        </skin>
+        <script>
+          <loop>true</loop>
+          <delay_start>0</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+            <waypoint>
+              <time>0.0</time>
+              <pose>6.5 2.0 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>10.0</time>
+              <pose>3.5 2.0 0 0 0 3.14</pose>
+            </waypoint>
+          </trajectory>
+        </script> 
+      </actor> 
+
+      <actor name="pedestrain3"> 
+       <skin>
+          <filename>walk.dae</filename>
+          <scale>0.8</scale>
+        </skin>
+        <script>
+          <loop>true</loop>
+          <delay_start>0</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+            <waypoint>
+              <time>0.0</time>
+              <pose>8.5 -0.5 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>10.0</time>
+              <pose>4.5 -0.5 0 0 0 3.14</pose>
+            </waypoint>
+          </trajectory>
+        </script> 
+      </actor> 
+      
+   </world>
+</sdf>
