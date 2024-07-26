@@ -4,7 +4,8 @@
 This program demonstrates a novel algorithm that combines Salient Object Detection (SOD) and Type II D-ZCBFs obstacle avoidance to enable a vehicle equipped with a depth camera to avoid obstacles and reach a specified destination or follow a corresponding trajectory. The simulation environment is based on Ubuntu 20.04, ROS Noetic, and Gazebo 11.
 
 ## Algorithms
-- Salient Object Detection: Minimum Barrier Salient Object Detection at 80 FPS 
+- Salient Object Detection:
+  - Reference: Minimum Barrier Salient Object Detection at 80 FPS 
   - C++ code reference: https://github.com/coderSkyChen/MBS_Cplus_c-
 - Type II D-ZCBFs Obstacle Avoidance 
   - Reference: Online Efficient Safety-Critical Control for Mobile Robots in Unknown Dynamic Multi-Obstacle Environments
@@ -109,3 +110,4 @@ python3 src/sod_avoidence/type2_D_ZCBFs/path_following_with_obstacles/scripts/el
 ```
 
 The trajectory can be changed in `python3 src/sod_avoidence/type2_D_ZCBFs/path_following_with_obstacles/scripts/path_generator.py`.
+All comparison data, charts, and videos for each scenario are available in the daten_analyse folder.
