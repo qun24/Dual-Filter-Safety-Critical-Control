@@ -1,4 +1,4 @@
-# SOD-TypeII-D-ZCBFs
+# E-FastSOD-Zones
 # Obstacle Avoidance and Path Following for Mobile Robots using Salient Object Detection and Type II D-ZCBFs
 
 This program demonstrates a novel algorithm that combines Salient Object Detection (SOD) and Type II D-ZCBFs obstacle avoidance to enable a vehicle equipped with a depth camera to avoid obstacles and reach a specified destination or follow a corresponding trajectory. The simulation environment is based on Ubuntu 20.04, ROS Noetic, and Gazebo 11.
