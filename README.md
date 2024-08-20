@@ -1,15 +1,7 @@
 # E-FastSOD-Zone-Safety-Critical-Control
 # Obstacle Avoidance and Path Following for Mobile Robots using Salient Object Detection and buffer D-ZCBFs
 
-This program demonstrates a novel algorithm that combines Salient Object Detection (SOD) and Type II D-ZCBFs obstacle avoidance to enable a vehicle equipped with a depth camera to avoid obstacles and reach a specified destination or follow a corresponding trajectory. The simulation environment is based on Ubuntu 20.04, ROS Noetic, and Gazebo 11.
-
-## Algorithms
-- Salient Object Detection:
-  - Reference: Minimum Barrier Salient Object Detection at 80 FPS 
-  - C++ code reference: https://github.com/coderSkyChen/MBS_Cplus_c-
-- Type II D-ZCBFs Obstacle Avoidance 
-  - Reference: Online Efficient Safety-Critical Control for Mobile Robots in Unknown Dynamic Multi-Obstacle Environments
-  - Code reference: https://github.com/GuangyaoTian/TypeII-D-ZCBFs/tree/main
+This program demonstrates a novel algorithm that combines Salient Object Detection (SOD) and buffer robust CBFs obstacle avoidance to enable a vehicle equipped with a depth camera to avoid obstacles and reach a specified destination or follow a corresponding trajectory. The simulation environment is based on Ubuntu 20.04, ROS Noetic, and Gazebo 11.
 
 ## Simulation Environment
 The package is primarily used in a Gazebo simulation environment that includes the TurtleBot3 and RealSense camera ROS packages. The simulated robot is a TurtleBot3 Waffle Pi equipped with a RealSense D435i depth camera. The Rviz and Gazebo files have been configured to include depth camera data.
